@@ -42,7 +42,7 @@
     #link_input {
       margin: 4px 8px 4px 8px;
       background-color: rgb(243, 243, 243);
-      width:400px;
+      width: 400px;
       height: fit-content;
       border-radius: 8px;
       border: 0px;
@@ -74,7 +74,7 @@
       margin: 16px;
     }
 
-    hr{
+    hr {
       color: #3b4247;
       margin: 16px;
     }
@@ -88,8 +88,9 @@
 
   <fieldset>
     <legend>YouTube video link</legend>
+
     <input id="link_input" type="text" placeholder="https://www.youtube.com/watch?v=27PM9mNhMXU">
-    
+
     <button id="watch">Watch</button>
 
   </fieldset>
@@ -105,8 +106,9 @@
 
 <hr>
 
-<iframe id="video_player" width="560" height="315" src="https://www.youtube.com/embed/9YffrCViTVk" title="YouTube video player"
-  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+<iframe id="video_player" width="560" height="315" src="https://www.youtube.com/embed/9YffrCViTVk"
+  title="YouTube video player" frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowfullscreen></iframe>
 
 <script>
@@ -115,16 +117,13 @@
     console.log("Clicked!");
     const textbox = document.getElementById('link_input');
     const link = textbox.value;
-    document.getElementById("video_player").src = "https://www.youtube.com/embed/" + link;
-    console.log("Clicked!", link);
 
 
-    // parent.postMessage({ pluginMessage: { type: 'create-rectangles', link } }, '*')
+    // https://www.youtube.com/watch?v=Sxxw3qtb3_g
+
+    document.getElementById("video_player").src = "https://www.youtube.com/embed/" + link.slice(32, 43);
+    console.log("Clicked!", link.slice(32));
   }
-
-  // document.getElementById('cancel').onclick = () => {
-  //   parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*')
-  // }
 
 
   // 2. This code loads the IFrame Player API code asynchronously.
