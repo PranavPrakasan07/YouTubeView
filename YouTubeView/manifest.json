@@ -1,0 +1,10 @@
+{
+  "name": "YouTubeView",
+  "id": "1030677329642768173",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": [
+    "figma"
+  ],
+  "ui": "ui.html"
+}
