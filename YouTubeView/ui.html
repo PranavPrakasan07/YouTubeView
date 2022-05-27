@@ -80,8 +80,14 @@
       color: #3b4247;
       margin: 16px;
     }
+
+    a{
+      text-decoration: none;
+    }
+
   </style>
 </head>
+
 
 
 <center>
@@ -97,6 +103,12 @@
   </fieldset>
 
 </center>
+
+<br>
+<div id="message" align="center">
+  Would you like to sponsor? 
+  <a id="watch" target="_blank" href="https://github.com/sponsors/PranavPrakasan07">Sponsor</a>
+</div>
 
 <br>
 
@@ -117,11 +129,26 @@
     const textbox = document.getElementById('link_input');
     const link = textbox.value;
 
+    updatedLink = "https://www.youtube.com/embed/";
 
     // https://www.youtube.com/watch?v=Sxxw3qtb3_g
+    // https://www.youtube.com/watch?v=0bwuZXekgqk
+    // https://youtu.be/0bwuZXekgqk?t=23
 
-    document.getElementById("video_player").src = "https://www.youtube.com/embed/" + link.slice(32, 43);
-    console.log("Clicked!", link.slice(32));
+    console.log("Link", link);
+    console.log("Clicked!32", link.slice(32));
+    console.log("Clicked!17", link.slice(17));
+    console.log("https://www.youtube.com/embed/" + link.slice(32, 43));
+
+    if(link.startsWith("https://www.youtube.com")){
+      updatedLink += link.slice(32);
+    }else if(link.startsWith("https://youtu.be/")){
+      updatedLink += link.slice(17);
+    }
+  
+    console.log("updatedLink", updatedLink);
+    document.getElementById("video_player").src = updatedLink;
+
   }
 
 

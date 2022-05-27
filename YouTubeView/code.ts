@@ -8,6 +8,7 @@
 // This shows the HTML page in "ui.html".
 figma.showUI(__html__, {width:595, height:325});
 
+figma.ui.resize(100,100);
 // Calls to "parent.postMessage" from within the HTML page will trigger this
 // callback. The callback will be passed the "pluginMessage" property of the
 // posted message.
